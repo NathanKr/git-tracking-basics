@@ -213,7 +213,7 @@ preview :
 <img src='./figs/create-preview-branch.png'/>
 
 
-<h3>upstream</h3>
+<h3>show upstream</h3>
 
 You can see here that only main branch has upstream which is origin/main
 <img src='./figs/show-branch-upstream.png'/>
@@ -238,7 +238,15 @@ now all branched has upstream
 
 <img src='./figs/all-branch-has-upstream.png'/>
 
+<h3>create upstream</h3>
        
+for dev
+
+<img src='./figs/set-dev-upstream-for-dev.png'/>
+
+for preview
+
+
 
 <h2>Points of Interest</h2>
 <ul>
