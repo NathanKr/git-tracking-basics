@@ -155,7 +155,7 @@ Here you push to the remote repository, and within that remote repository, you p
   <li>Avoid using <code>origin</code> manually each time</li>
 </ul>
 
-<h4>One-Time Setup</h4>
+<h4>One-Time Setup</h4> 
 
 <h5>1. Push <code>dev</code> to <code>preview</code> with tracking</h5>
 <pre><code>git checkout dev
