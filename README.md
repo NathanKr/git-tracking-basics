@@ -213,7 +213,7 @@ preview :
 <img src='./figs/create-preview-branch.png'/>
 
 
-<h3>upstream</h3>
+<h3>show upstream</h3>
 
 You can see here that only main branch has upstream which is origin/main
 <img src='./figs/show-branch-upstream.png'/>
@@ -227,8 +227,26 @@ git push
 
 and git will know where to look for the info i.e. origin/main
 
+The following create upstream for dev
 
+
+set preview stream for preview
+
+<img src='./figs/set-preview-upstream-for-preview.png'/>
+
+now all branched has upstream 
+
+<img src='./figs/all-branch-has-upstream.png'/>
+
+<h3>create upstream</h3>
        
+for dev
+
+<img src='./figs/set-dev-upstream-for-dev.png'/>
+
+for preview
+
+
 
 <h2>Points of Interest</h2>
 <ul>
