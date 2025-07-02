@@ -256,7 +256,8 @@ ahead behined
 
 <img src='./figs/ahead-behine-on-github-desktop.png'/>
 
-preview is ahead of its remote upstreram so need to push
+preview is ahead of its remote upstreram so need to push from preview to main
+
 
 
 <h2>Points of Interest</h2>
