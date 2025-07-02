@@ -208,14 +208,6 @@ git push --set-upstream origin preview:main
 </table>
 
 
-
-<h2>Design</h2>
-....
-
-
-<h2>Code Structure</h2>
-....
-
 <h2>Demo</h2>
 
 <h3>upstream</h3>
@@ -236,6 +228,9 @@ and git will know where to look for the info i.e. origin/main
 
 <img src='./figs/set-main-remote-as-upstream-for-preview.png'/>
 
+<h3>set preview remote as upstream for dev</h3>
+
+<img src='./figs//set-preview-remote-as-upstream-for-dev.png'/>
 
 <h3>branch created<h3>
 
