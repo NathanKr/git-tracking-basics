@@ -241,6 +241,10 @@ we can see that dev is a head of main
 
 <img src='./figs/dev-ahead-of-main.png'/>
 
+<h3>merge changes</h3>
+
+
+
 <h2>Points of Interest</h2>
 <ul>
 <li>While <code>git branch -vv</code> shows a local branch's behind/ahead status relative to its configured upstream (e.g., <code>dev</code> compared to <code>origin/dev</code>), the GitHub dashboard's "Branches" tab displays the behind/ahead status of <strong>each remote branch (as it exists on GitHub)</strong> relative to the repository's <em>default branch</em> (typically <code>main</code> or <code>master</code>).</li>
