@@ -8,11 +8,10 @@
 
 <h2>Motivation</h2>
 In post2video i have three main branches : main , preview and dev
-i want to push from dev to preview
-i want to push from preview to main
+i want to copy from dev to preview
+i want to copy from preview to main
 
 i dont want to use each time origin because it is error prone , so how to do it ?
-what does origin means ?
 
 <h2>Installation</h2>
 ....
@@ -149,63 +148,58 @@ git branch -vv
 <p>In essence, <code>origin</code> is the lifeline connecting your individual contributions to the collective project, enabling teamwork, ensuring data integrity, and simplifying your daily Git operations.</p>
 
 
+<h2>Design - Branching Strategy</h2>
+<p>
+  This strategy uses a <b><code>dev</code> &rarr; <code>preview</code> &rarr; <code>main</code></b> flow, establishing clear stages for code stability: <code>dev</code> for active work, <code>preview</code> for testing and QA, and <code>main</code> for production.
+</p>
+<p>
+  It <b>reduces the risk of bugs</b> in live environments by requiring code to pass through validation points. While it adds some merging overhead and branch management compared to simpler models, it's excellent for projects needing <b>structured quality control and predictable releases</b>.
+</p>
 
-<h3>Simplified Pushing with Cross-Branch Tracking</h3>
-<h4>Goal</h4>
+<h3>Flow</h3>
+<p><code>dev</code> &rarr; <code>preview</code> &rarr; <code>main</code></p>
+
+<h3>Upstream Configuration (One-Time Setup)</h3>
+<p>To enable simple <code>git push</code> and <code>git pull</code> commands without specifying <code>origin</code> or branch names, ensure your local branches are tracking their corresponding remote branches. This is the standard way Git simplifies interactions with the remote.</p>
 <ul>
-  <li>Push from <strong>dev</strong> → <strong>preview</strong></li>
-  <li>Push from <strong>preview</strong> → <strong>main</strong></li>
-  <li>Configure branches to easily push to specific remote branches (even if names differ)</li>
+    <li><code>dev</code> local branch should track <code>origin/dev</code>.
+        <pre><code>git checkout dev
+git branch --set-upstream-to=origin/dev dev
+</code></pre>
+    </li>
+    <li><code>preview</code> local branch should track <code>origin/preview</code>.
+        <pre><code>git checkout preview
+git branch --set-upstream-to=origin/preview preview
+</code></pre>
+    </li>
+    <li><code>main</code> local branch should track <code>origin/main</code>. (This is often set by default when cloning, no <code>set-upstream</code> typically needed
+    </li>
 </ul>
-
-<h4>One-Time Setup</h4>
-
-<h5>1. Push <code>dev</code> to <code>preview</code> with tracking</h5>
-<pre><code>git checkout dev
-git push --set-upstream origin dev:preview
-</code></pre>
-<p>Now from <code>dev</code> branch, you will need to run:</p>
-<pre><code>git push origin HEAD:preview</code></pre>
 <p>
-    <em>Note: Although tracking is set by `--set-upstream`, if your local branch name (e.g., `dev`) does not match the remote branch name it's tracking (e.g., `preview`), Git's default `push.default` setting may require the explicit `git push origin HEAD:&lt;remote-branch-name&gt;` command.</em>
+    <em>You can verify tracking status for all your local branches with: <code>git branch -vv</code></em>
 </p>
 
-<h5>2. Push <code>preview</code> to <code>main</code> with tracking</h5>
-<pre><code>git checkout preview
-git push --set-upstream origin preview:main
+<h3>Merging and Pushing Workflow</h3>
+<p>This is how you promote changes from one stage to the next. You merge the source branch into the target branch, then push the <i>target</i> branch to its corresponding remote.</p>
+
+<h4>1. Promote from <code>dev</code> to <code>preview</code></h4>
+<p>This process brings the latest changes from <code>dev</code> into the <code>preview</code> branch, ready for testing in the <code>preview</code> environment.</p>
+<pre><code>git checkout preview    # Switch to the target branch (preview)
+git pull                # Get the latest changes from origin/preview
+git merge dev           # Merge changes from the dev branch into preview
+# Resolve any merge conflicts if they occur
+git push                # Push the updated preview branch to origin/preview
 </code></pre>
-<p>Now from <code>preview</code> branch, you will need to run:</p>
-<pre><code>git push origin HEAD:main</code></pre>
-<p>
-    <em>(This note applies here as well, where `preview` does not match `main`.)</em>
-</p>
 
+<h4>2. Promote from <code>preview</code> to <code>main</code></h4>
+<p>Once changes in <code>preview</code> are stable and approved, this process brings them into the <code>main</code> branch for production deployment.</p>
+<pre><code>git checkout main       # Switch to the target branch (main)
+git pull                # Get the latest changes from origin/main
+git merge preview       # Merge changes from the preview branch into main
+# Resolve any merge conflicts if they occur
+git push                # Push the updated main branch to origin/main
+</code></pre>
 
-<h4>Summary</h4>
-<table border="1" cellpadding="6">
-  <thead>
-    <tr>
-      <th>Local Branch</th>
-      <th>Push Target</th>
-      <th>Setup Command</th>
-      <th>Future Command</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>dev</code></td>
-      <td><code>preview</code></td>
-      <td><code>git push --set-upstream origin dev:preview</code></td>
-      <td><code>git push origin HEAD:preview</code></td>
-    </tr>
-    <tr>
-      <td><code>preview</code></td>
-      <td><code>main</code></td>
-      <td><code>git push --set-upstream origin preview:main</code></td>
-      <td><code>git push origin HEAD:main</code></td>
-    </tr>
-  </tbody>
-</table>
 
 
 <h2>Demo</h2>
