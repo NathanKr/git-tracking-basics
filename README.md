@@ -243,6 +243,11 @@ now all branched has upstream
 <img src='./figs/all-branch-has-upstream.png'/>
 
 
+<h3>github dashboard ahead \ behind</h3>
+
+<img src='./figs/dev-github-dashboard-ahead.png'/>
+
+
 <h2>Points of Interest</h2>
 <ul>
   <li>.......</li>
