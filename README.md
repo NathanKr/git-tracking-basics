@@ -1,29 +1,42 @@
 <h1>Project Name</h1>
-....
+Git Tracking Basics for CI/CD Workflows
 
 <h2>Project Description</h2>
-....
+<p>This repository serves as a practical guide and hands-on demonstration for mastering essential Git concepts, focusing specifically on branch tracking, the role of <code>origin</code>, and upstream relationships. It illustrates how these fundamental Git features streamline development workflows, particularly within a Continuous Integration/Continuous Delivery (CI/CD) environment through a clear <code>dev</code> &rarr; <code>preview</code> &rarr; <code>main</code> branching strategy.</p>
+
 
 <h2>Motivation</h2>
-In post2video i have three main branches : main , preview and dev
-i want to copy from dev to preview
-i want to copy from preview to main
+<p>This project employs a structured Git branching strategy to manage releases across different environments. The primary goal is to ensure stable code progression from development through testing to production. Specifically, we follow a <code>dev</code> &rarr; <code>preview</code> &rarr; <code>main</code> flow.</p>
+<p>A key aim is to streamline Git operations within this flow, minimizing manual specification of remotes and branches (e.g., avoiding <code>git push origin dev</code> every time) by leveraging Git's upstream tracking features. This enhances efficiency and reduces potential errors during code promotion.</p>
 
-i dont want to use each time origin because it is error prone , so how to do it ?
 
 <h2>Installation</h2>
-....
+<p>To get started with this guide and follow the practical examples, you only need Git installed on your system. No other complex dependencies are required.</p>
+<ol>
+    <li><strong>Clone the repository:</strong> Open your terminal or command prompt and run the following command to clone this repository to your local machine:
+        <pre><code>git clone https://github.com/NathanKr/git-tracking-basics</code></pre>
+    </li>
+    <li><strong>Navigate into the project directory:</strong>
+        <pre><code>cd git-tracking-basics</code></pre>
+    </li>
+</ol>
 
 <h2>Usage</h2>
-....
+<p>This repository is designed as an educational resource and a hands-on guide. To make the most of it:</p>
+<ol>
+    <li><strong>Read the README:</strong> Start by thoroughly reading this <code>README.md</code> file from top to bottom. It provides comprehensive explanations of all key Git concepts and the branching strategy.</li>
+    <li><strong>Explore the Demo:</strong> The "Demo" section highlights important Git commands and their visual outcomes. We encourage you to execute these commands in your own cloned repository to observe and understand the results directly. This hands-on practice will solidify your understanding.</li>
+    <li><strong>Experiment:</strong> Feel free to experiment with Git commands, create new branches, make commits, and explore different scenarios within your local clone to deepen your knowledge.</li>
+</ol>
+
 
 <h2>Technologies Used</h2>
 <ul>
 <li>Git</li>
-<li>Github</li>
+<li>GitHub</li>
 </ul>
 
-<h2>Git relevant basics</h2>
+<h2>Git tracking basics</h2>
 
 <h3>What is <code>HEAD</code> in Git?</h3>
 
@@ -50,7 +63,7 @@ i dont want to use each time origin because it is error prone , so how to do it 
     <li><strong>"up to date."</strong></li>
 </ul>
 
-<h4>How is tracking established?</h4>
+<h4>How is Tracking Established?</h4>
 <ul>
     <li><strong>Cloning a repository:</strong> When you <code>git clone</code> a repository, Git automatically sets up your local <code>main</code> (or <code>master</code>) branch to track <code>origin/main</code> (or <code>origin/master</code>).</li>
     <li><strong>Creating a new local branch from a remote branch:</strong> If you do <code>git checkout -b new-feature origin/new-feature</code>, your new <code>new-feature</code> branch will automatically track <code>origin/new-feature</code>.</li>
@@ -64,40 +77,8 @@ i dont want to use each time origin because it is error prone , so how to do it 
 
 <p>In essence, tracking is about making your common Git operations (<code>pull</code>, <code>push</code>, <code>status</code>) more efficient and informative by pre-configuring the remote and remote branch your local branch is most closely associated with.</p>
 
-<h3>What is <code>origin</code>?</h3>
-<p><code>origin</code> is the default name Git gives to your remote repository (usually on GitHub). You can check it with:</p>
-
-<pre><code>git remote -v</code></pre>
-<p>Typical output:</p>
-<pre><code>origin  git@github.com:yourname/post2video.git (fetch)
-origin  git@github.com:yourname/post2video.git (push)
-</code></pre>
-
-<p><code>origin</code> is a property of the repository</p>
-
-<h4>How to check origin</h4>
-
-```bash
-git remote -v
-```
-
-```bash
-git remote show origin
-```
-
-<h3>What is upstream?</h3>
-Upstream in Git is the primary remote repository or branch that your local repository pulls updates from and/or pushes your contributions towards. 
-<p>Upstream is a property of a local branch</p>
-
-<h4>How to check upstream</h4>
-
-```bash
-git branch -vv
-```
-
-<h3>Why <code>origin</code> is Critically Important in Git</h3>
-
-<p>'<strong>origin</strong>' is a fundamental concept in Git, serving as the default and most common name for your <strong>main remote repository</strong>. It's not a branch, but rather an <strong>alias</strong> (a friendly nickname) that points to the web address (URL) of your project's primary shared code location, typically hosted on platforms like GitHub, GitLab, or Bitbucket.</p>
+<h3>Understanding <code>origin</code> and Upstream</h3>
+<p><code>origin</code> is a fundamental concept in Git, serving as the default and most common name for your <strong>main remote repository</strong>. It's not a branch, but rather an <strong>alias</strong> (a friendly nickname) that points to the web address (URL) of your project's primary shared code location, typically hosted on platforms like GitHub, GitLab, or Bitbucket.</p>
 
 <p>Understanding <code>origin</code> is key to effective version control and collaboration. Here's why it's so important:</p>
 
@@ -128,16 +109,27 @@ git branch -vv
 </ul>
 
 <h4>Analogy: Your Local Workspace vs. The Shared Company Drive</h4>
-  <p>Imagine your local computer's project folder is your personal desk workspace. You're working on a document there.</p>
-  <p>'<strong>origin</strong>' is like the central, shared company drive (or a cloud service like Google Drive) where the master version of the document is stored, and where everyone else on your team collaborates.</p>
-  <ul>
-      <li>When you `git pull origin main`, you're going to the shared drive (<code>origin</code>), getting the latest 'main' document, and bringing it to your desk.</li>
-      <li>When you `git push origin my-feature-branch`, you're taking your 'my-feature-branch' document from your desk and uploading it to the shared drive (<code>origin</code>) for everyone else to see.</li>
-  </ul>
-
-  <p>Without the shared drive (<code>origin</code>), you couldn't easily collaborate or back up your work.</p>
+<p>Imagine your local computer's project folder is your personal desk workspace. You're working on a document there.</p>
+<p>'<strong>origin</strong>' is like the central, shared company drive (or a cloud service like Google Drive) where the master version of the document is stored, and where everyone else on your team collaborates.</p>
+<ul>
+    <li>When you `git pull origin main`, you're going to the shared drive (<code>origin</code>), getting the latest 'main' document, and bringing it to your desk.</li>
+    <li>When you `git push origin my-feature-branch`, you're taking your 'my-feature-branch' document from your desk and uploading it to the shared drive (<code>origin</code>) for everyone else to see.</li>
+</ul>
 
 <p>In essence, <code>origin</code> is the lifeline connecting your individual contributions to the collective project, enabling teamwork, ensuring data integrity, and simplifying your daily Git operations.</p>
+
+<p>As discussed above, the **upstream** (or tracking) branch is the specific remote branch that your local branch is configured to pull updates from and push changes to by default. It defines the default remote target for commands like <code>git pull</code> and <code>git push</code> when executed without explicit remote or branch names. An upstream is a property of a <b>local branch</b>.</p>
+
+<h4>How to check <code>origin</code> and Upstream</h4>
+<p>To see your configured remotes (like <code>origin</code>):</p>
+<pre><code>git remote -v</code></pre>
+<p>Typical output:</p>
+<pre><code>origin  git@github.com:yourname/post2video.git (fetch)
+origin  git@github.com:yourname/post2video.git (push)
+</code></pre>
+<p>To see your local branches and what upstream branch they are tracking:</p>
+<pre><code>git branch -vv</code></pre>
+
 
 <h2>Design - Branching Strategy</h2>
 <p>
@@ -193,18 +185,18 @@ git push                # Push the updated main branch to origin/main
 
 <h2>Demo</h2>
 
-<h3>branch created<h3>
+<h3>Branch Creation</h3>
 
 dev :
-<img src='./figs/create-dev-branch.png'/>
+<img src='./figs/create-dev-branch.png' alt='Screenshot showing the creation of the local dev branch' />
 
 preview :
-<img src='./figs/create-preview-branch.png'/>
+<img src='./figs/create-preview-branch.png' alt='Screenshot showing the creation of the local preview branch' />
 
-<h3>show upstream</h3>
+<h3>Viewing Upstream Status</h3>
 
 You can see here that only main branch has upstream which is origin/main
-<img src='./figs/show-branch-upstream.png'/>
+<img src='./figs/show-branch-upstream.png' alt='Screenshot of git branch -vv output, showing only main branch has an upstream configured' />
 
 This means that on main you can do
 
@@ -215,37 +207,37 @@ git push
 
 and git will know where to look for the info i.e. origin/main
 
-<h3>create upstream</h3>
+<h3>Setting Upstream Branches</h3>
        
-The following create upstream for dev
+The following steps demonstrate setting the upstream for dev
 
-<img src='./figs/set-dev-upstream-for-dev.png'/>
+<img src='./figs/set-dev-upstream-for-dev.png' alt='Screenshot demonstrating setting the upstream for the dev branch to origin/dev' />
 
-The following create upstream for preview
+The following steps demonstrate setting the upstream for preview
 
-<img src='./figs/set-preview-upstream-for-preview.png'/>
+<img src='./figs/set-preview-upstream-for-preview.png' alt='Screenshot demonstrating setting the upstream for the preview branch to origin/preview' />
 
-now all branched has upstream
+Now, all branches have their upstream configured
 
-<img src='./figs/all-branch-has-upstream.png'/>
+<img src='./figs/all-branch-has-upstream.png' alt='Screenshot of git branch -vv output, confirming all local branches now have an upstream configured' />
 
-<h3>github dashboard ahead \ behind</h3>
+<h3>GitHub Dashboard: Ahead/Behind Status</h3>
 
-<img src='./figs/dev-github-dashboard-ahead.png'/>
+<img src='./figs/dev-github-dashboard-ahead.png' alt='GitHub dashboard screenshot showing the dev branch marked as "ahead" of main' />
 
 click on it
 
-<img src='./figs/dev-ahead-click.png'/>
+<img src='./figs/dev-ahead-click.png' alt='GitHub dashboard screenshot after clicking the "ahead" indicator for the dev branch' />
 
 we can see that dev is a head of main
 
-<img src='./figs/dev-ahead-of-main.png'/>
+<img src='./figs/dev-ahead-of-main.png' alt='GitHub dashboard screenshot detailing commits where dev is ahead of main' />
 
-<h3>merge changes</h3>
+<h3>Merging Changes Between Branches</h3>
 
 following changes in dev you might want the preview branch to accept it
 
-<img src='./figs//merge-local-dev-to-local-preview.png'/>
+<img src='./figs//merge-local-dev-to-local-preview.png' alt='Screenshot of Git command line merging local dev branch into local preview branch' />
 
 <h2>Points of Interest</h2>
 <ul>
@@ -254,14 +246,4 @@ following changes in dev you might want the preview branch to accept it
 </ul>
 
 
-<!-- <h2>Points of Interest</h2>
-<ul>
-<li>While <code>git branch -vv</code> shows a local branch's behind/ahead status relative to its configured upstream (e.g., <code>dev</code> compared to <code>origin/dev</code>), the GitHub dashboard's "Branches" tab displays the behind/ahead status of <strong>each remote branch (as it exists on GitHub)</strong> relative to the repository's <em>default branch</em> (typically <code>main</code> or <code>master</code>).</li>
-<li>It is important to use <code>git status</code> because it will reveal info not given by <code>git branch -vv</code> or github dashboar branchaed tag</li>
-</ul> -->
 
-<h2>References</h2>
-<ul>
-    <li>...</li>
-   
-</ul>
