@@ -30,6 +30,11 @@ what does origin means ?
 
 <h2>Git relevant basics</h2>
 
+<h3>What is <code>HEAD</code> in Git?</h3>
+
+<p><code>HEAD</code> in Git is a <strong>pointer to your current commit</strong> – it shows what you're currently "looking at" or where new commits will be added.</p>
+
+
 <h3>What is Tracking?</h3>
 
 <p>In Git, <strong>tracking</strong> refers to the established relationship between a local branch in your repository and a specific branch in a remote repository.</p>
