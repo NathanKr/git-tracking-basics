@@ -227,25 +227,20 @@ git push
 
 and git will know where to look for the info i.e. origin/main
 
+
+<h3>create upstream</h3>
+       
 The following create upstream for dev
 
+<img src='./figs/set-dev-upstream-for-dev.png'/>
 
-set preview stream for preview
+The following create upstream for preview
 
 <img src='./figs/set-preview-upstream-for-preview.png'/>
 
 now all branched has upstream 
 
 <img src='./figs/all-branch-has-upstream.png'/>
-
-<h3>create upstream</h3>
-       
-for dev
-
-<img src='./figs/set-dev-upstream-for-dev.png'/>
-
-for preview
-
 
 
 <h2>Points of Interest</h2>
