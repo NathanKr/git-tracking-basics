@@ -227,6 +227,10 @@ git push
 
 and git will know where to look for the info i.e. origin/main
 
+The following create upstream for dev
+
+
+
 
        
 
