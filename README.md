@@ -249,8 +249,16 @@ following changes in dev you might want the preview branch to accept it
 
 <h2>Points of Interest</h2>
 <ul>
-<li>While <code>git branch -vv</code> shows a local branch's behind/ahead status relative to its configured upstream (e.g., <code>dev</code> compared to <code>origin/dev</code>), the GitHub dashboard's "Branches" tab displays the behind/ahead status of <strong>each remote branch (as it exists on GitHub)</strong> relative to the repository's <em>default branch</em> (typically <code>main</code> or <code>master</code>).</li>
+    <li>While <code>git branch -vv</code> provides the behind/ahead status of a local branch relative to its configured upstream (e.g., <code>dev</code> compared to <code>origin/dev</code>), the GitHub dashboard's "Branches" tab displays this status for <strong>each remote branch (as it exists on GitHub)</strong> relative to the repository's <em>default branch</em> (typically <code>main</code> or <code>master</code>).</li>
+    <li>It is crucial to use <code>git status</code>, as it reveals essential information about the working directory and staging area that is not provided by <code>git branch -vv</code> or the GitHub dashboard's branch tags.</li>
 </ul>
+
+
+<!-- <h2>Points of Interest</h2>
+<ul>
+<li>While <code>git branch -vv</code> shows a local branch's behind/ahead status relative to its configured upstream (e.g., <code>dev</code> compared to <code>origin/dev</code>), the GitHub dashboard's "Branches" tab displays the behind/ahead status of <strong>each remote branch (as it exists on GitHub)</strong> relative to the repository's <em>default branch</em> (typically <code>main</code> or <code>master</code>).</li>
+<li>It is important to use <code>git status</code> because it will reveal info not given by <code>git branch -vv</code> or github dashboar branchaed tag</li>
+</ul> -->
 
 <h2>References</h2>
 <ul>
