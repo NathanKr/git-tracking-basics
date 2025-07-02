@@ -40,7 +40,7 @@ what does origin means ?
 <p>In Git, <strong>tracking</strong> refers to the established relationship between a local branch in your repository and a specific branch in a remote repository.</p>
 
 <p>Think of it as setting up a <strong>default communication channel</strong> for a particular local branch. When a local branch "tracks" a remote branch (often called its "upstream branch"), Git gains several convenient automatic behaviors:</p>
-
+ 
 <h4>1. Simplified `git pull`</h4>
 <p>When you're on a tracking branch and type just <code>git pull</code>, Git automatically knows which remote to fetch from and which remote branch to merge into your current local branch. You don't need to specify <code>git pull origin main</code> every time if your local <code>main</code> branch is tracking <code>origin/main</code>.</p>
 
@@ -208,15 +208,16 @@ git push --set-upstream origin preview:main
 </table>
 
 
-
-<h2>Design</h2>
-....
-
-
-<h2>Code Structure</h2>
-....
-
 <h2>Demo</h2>
+
+<h3>branch created<h3>
+
+dev :
+<img src='./figs/create-dev-branch.png'/>
+
+preview :
+<img src='./figs/create-preview-branch.png'/>
+
 
 <h3>upstream</h3>
 
@@ -236,17 +237,26 @@ and git will know where to look for the info i.e. origin/main
 
 <img src='./figs/set-main-remote-as-upstream-for-preview.png'/>
 
+<h3>set preview remote as upstream for dev</h3>
 
-<h3>branch created<h3>
+<img src='./figs//set-preview-remote-as-upstream-for-dev.png'/>
 
-dev :
-<img src='./figs/create-dev-branch.png'/>
 
-preview :
-<img src='./figs/create-preview-branch.png'/>
+<h3>ahead</h3>
 
-<h3>check origin</h3>
+Notice that dev is ahead by 1 relative to its remote upstram - preview. To solve this you simple need to push from dev to Head:preview , once done the ahead is gone
 
+<img src='./figs/dev-local-ahead-of-remote-prview-upstream.png'/>
+
+Notice that main is behine its remote upstream
+
+.......................
+
+ahead behined
+
+<img src='./figs/ahead-behine-on-github-desktop.png'/>
+
+preview is ahead of its remote upstreram so need to push
 
 
 <h2>Points of Interest</h2>
