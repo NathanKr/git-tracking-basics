@@ -159,14 +159,14 @@ Here you push to the remote repository, and within that remote repository, you p
 
 <h5>1. Push <code>dev</code> to <code>preview</code> with tracking</h5>
 <pre><code>git checkout dev
-git push --set-upstream origin preview
+git push --set-upstream origin dev:preview
 </code></pre>
 <p>Now from <code>dev</code> branch, just run:</p>
 <pre><code>git push</code></pre>
 
 <h5>2. Push <code>preview</code> to <code>main</code> with tracking</h5>
 <pre><code>git checkout preview
-git push --set-upstream origin main
+git push --set-upstream origin preview:main
 </code></pre>
 <p>Now from <code>preview</code> branch, just run:</p>
 <pre><code>git push</code></pre>
@@ -222,7 +222,9 @@ git push
 
 and git will know where to look for the info i.e. origin/main
 
-<h3>set upstream of preview for dev</h3>
+<h3>set main remote as upstream for preview</h3>
+
+<img src='./figs/set-main-remote-as-upstream-for-preview.png'/>
 
 
 <h3>branch created<h3>
