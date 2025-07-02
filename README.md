@@ -227,87 +227,12 @@ git push
 
 and git will know where to look for the info i.e. origin/main
 
-<h3>set main remote as upstream for preview</h3>
-
-<img src='./figs/set-main-remote-as-upstream-for-preview.png'/>
-
-<h3>set preview remote as upstream for dev</h3>
-
-<img src='./figs//set-preview-remote-as-upstream-for-dev.png'/>
-
-
-<h3>ahead</h3>
-
-Notice that dev is ahead by 1 relative to its remote upstram - preview. To solve this you simple need to push from dev to Head:preview , once done the ahead is gone
-
-<img src='./figs/dev-local-ahead-of-remote-prview-upstream.png'/>
-
-Notice that main is behine its remote upstream
-
-.......................
-
-ahead behined
-
-<img src='./figs/ahead-behine-on-github-desktop.png'/>
-
-preview is ahead of its remote upstreram so need to push from preview to main
 
        
 
 <h2>Points of Interest</h2>
 <ul>
-  <li>why
-
-    ```bash
-    git push origin preview
-    ```
-    issued pull request from preview to main
-  </li>
-
-  <li>1) why after i have set main as upstream for preview , so from preview i did git push i got
-git push
-fatal: The upstream branch of your current branch does not match
-the name of your current branch.  To push to the upstream branch
-
-    git push origin HEAD:main
-
-To push to the branch of the same name on the remote, use
-
-    git push origin HEAD
-
-To choose either option permanently, see push.default in 'git help config'.
-
-To avoid automatically configuring an upstream branch when its name
-won't match the local branch, see option 'simple' of branch.autoSetupMerge
-in 'git help config'.
-
-2) and then 
-git push origin main
-To https://github.com/NathanKr/git-tracking-basics
- ! [rejected]        main -> main (non-fast-forward)
-error: failed to push some refs to 'https://github.com/NathanKr/git-tracking-basics'
-hint: Updates were rejected because a pushed branch tip is behind its remote
-hint: counterpart. If you want to integrate the remote changes, use 'git pull'
-hint: before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-
-3) only  this is ok git push origin HEAD:main
-Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
-To https://github.com/NathanKr/git-tracking-basics
-   7b9308e..bf5becd  HEAD -> main
-PS C:\nathan\misc\github\git-tracking-basics>
-  </li>
-  <li>suppose that i have create main as upstream for preview now i push - will it reach both main and preview on remote</li>
-  <li>on preview after set upstream as main i did 
-  
-  push origin HEAD:main
-  but on the remote preview was begine so i had to do also
-  git push origin preview 
-
-  ==>do i always need to do this ?
-  
-  </li>
-
+  <li>.......</li>
 </ul>
 
 <h2>References</h2>
