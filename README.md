@@ -243,7 +243,9 @@ we can see that dev is a head of main
 
 <h3>merge changes</h3>
 
+following changes in dev you might want the preview branch to accept it
 
+<img src='./figs//merge-local-dev-to-local-preview.png'/>
 
 <h2>Points of Interest</h2>
 <ul>
