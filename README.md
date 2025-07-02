@@ -250,7 +250,13 @@ Notice that dev is ahead by 1 relative to its remote upstram - preview. To solve
 
 Notice that main is behine its remote upstream
 
+.......................
 
+ahead behined
+
+<img src='./figs/ahead-behine-on-github-desktop.png'/>
+
+preview is ahead of its remote upstreram so need to push
 
 
 <h2>Points of Interest</h2>
