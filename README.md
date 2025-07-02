@@ -145,31 +145,35 @@ git branch -vv
 
 
 
-<h3>Push without origin</h3>
-Here you push to the remote repository, and within that remote repository, you push to a specific branch
-
+<h3>Simplified Pushing with Cross-Branch Tracking</h3>
 <h4>Goal</h4>
 <ul>
   <li>Push from <strong>dev</strong> → <strong>preview</strong></li>
   <li>Push from <strong>preview</strong> → <strong>main</strong></li>
-  <li>Avoid using <code>origin</code> manually each time</li>
+  <li>Configure branches to easily push to specific remote branches (even if names differ)</li>
 </ul>
 
-<h4>One-Time Setup</h4> 
+<h4>One-Time Setup</h4>
 
 <h5>1. Push <code>dev</code> to <code>preview</code> with tracking</h5>
 <pre><code>git checkout dev
 git push --set-upstream origin dev:preview
 </code></pre>
-<p>Now from <code>dev</code> branch, just run:</p>
-<pre><code>git push</code></pre>
+<p>Now from <code>dev</code> branch, you will need to run:</p>
+<pre><code>git push origin HEAD:preview</code></pre>
+<p>
+    <em>Note: Although tracking is set by `--set-upstream`, if your local branch name (e.g., `dev`) does not match the remote branch name it's tracking (e.g., `preview`), Git's default `push.default` setting may require the explicit `git push origin HEAD:&lt;remote-branch-name&gt;` command.</em>
+</p>
 
 <h5>2. Push <code>preview</code> to <code>main</code> with tracking</h5>
 <pre><code>git checkout preview
 git push --set-upstream origin preview:main
 </code></pre>
-<p>Now from <code>preview</code> branch, just run:</p>
-<pre><code>git push</code></pre>
+<p>Now from <code>preview</code> branch, you will need to run:</p>
+<pre><code>git push origin HEAD:main</code></pre>
+<p>
+    <em>(This note applies here as well, where `preview` does not match `main`.)</em>
+</p>
 
 
 <h4>Summary</h4>
@@ -187,16 +191,17 @@ git push --set-upstream origin preview:main
       <td><code>dev</code></td>
       <td><code>preview</code></td>
       <td><code>git push --set-upstream origin dev:preview</code></td>
-      <td><code>git push</code></td>
+      <td><code>git push origin HEAD:preview</code></td>
     </tr>
     <tr>
       <td><code>preview</code></td>
       <td><code>main</code></td>
       <td><code>git push --set-upstream origin preview:main</code></td>
-      <td><code>git push</code></td>
+      <td><code>git push origin HEAD:main</code></td>
     </tr>
   </tbody>
 </table>
+
 
 
 <h2>Design</h2>
