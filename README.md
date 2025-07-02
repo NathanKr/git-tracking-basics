@@ -186,13 +186,13 @@ git push --set-upstream origin preview:main
     <tr>
       <td><code>dev</code></td>
       <td><code>preview</code></td>
-      <td><code>git push --set-upstream origin preview</code></td>
+      <td><code>git push --set-upstream origin dev:preview</code></td>
       <td><code>git push</code></td>
     </tr>
     <tr>
       <td><code>preview</code></td>
       <td><code>main</code></td>
-      <td><code>git push --set-upstream origin main</code></td>
+      <td><code>git push --set-upstream origin preview:main</code></td>
       <td><code>git push</code></td>
     </tr>
   </tbody>
@@ -283,6 +283,15 @@ To https://github.com/NathanKr/git-tracking-basics
 PS C:\nathan\misc\github\git-tracking-basics>
   </li>
   <li>suppose that i have create main as upstream for preview now i push - will it reach both main and preview on remote</li>
+  <li>on preview after set upstream as main i did 
+  
+  push origin HEAD:main
+  but on the remote preview was begine so i had to do also
+  git push origin preview 
+
+  ==>do i always need to do this ?
+  
+  </li>
 
 </ul>
 
