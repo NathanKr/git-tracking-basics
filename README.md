@@ -230,7 +230,13 @@ and git will know where to look for the info i.e. origin/main
 The following create upstream for dev
 
 
+set preview stream for preview
 
+<img src='./figs/set-preview-upstream-for-preview.png'/>
+
+now all branched has upstream 
+
+<img src='./figs/all-branch-has-upstream.png'/>
 
        
 
