@@ -23,7 +23,10 @@ what does origin means ?
 
 
 <h2>Technologies Used</h2>
-....
+<ul>
+<li>Git</li>
+<li>Github</li>
+</ul>
 
 <h2>Git relevant basics</h2>
 
