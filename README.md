@@ -247,6 +247,14 @@ now all branched has upstream
 
 <img src='./figs/dev-github-dashboard-ahead.png'/>
 
+click on it 
+
+<img src='./figs/dev-ahead-click.png'/>
+
+we can see that dev is a head of main
+
+<img src='./figs/dev-ahead-of-main.png'/>
+
 
 <h2>Points of Interest</h2>
 <ul>
