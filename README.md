@@ -210,6 +210,15 @@ git push --set-upstream origin preview:main
 
 <h2>Demo</h2>
 
+<h3>branch created<h3>
+
+dev :
+<img src='./figs/create-dev-branch.png'/>
+
+preview :
+<img src='./figs/create-preview-branch.png'/>
+
+
 <h3>upstream</h3>
 
 You can see here that only main branch has upstream which is origin/main
@@ -232,15 +241,15 @@ and git will know where to look for the info i.e. origin/main
 
 <img src='./figs//set-preview-remote-as-upstream-for-dev.png'/>
 
-<h3>branch created<h3>
 
-dev :
-<img src='./figs/create-dev-branch.png'/>
+<h3>ahead</h3>
 
-preview :
-<img src='./figs/create-preview-branch.png'/>
+Notice that dev is ahead by 1 relative to its remote upstram - preview. To solve this you simple need to push from dev to Head:preview , once done the ahead is gone
 
-<h3>check origin</h3>
+<img src='./figs/dev-local-ahead-of-remote-prview-upstream.png'/>
+
+Notice that main is behine its remote upstream
+
 
 
 
