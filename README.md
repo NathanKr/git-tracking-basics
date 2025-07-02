@@ -1,8 +1,6 @@
 <h1>Project Name</h1>
 ....
 
-
-
 <h2>Project Description</h2>
 ....
 
@@ -16,10 +14,8 @@ i dont want to use each time origin because it is error prone , so how to do it 
 <h2>Installation</h2>
 ....
 
-
 <h2>Usage</h2>
 ....
-
 
 <h2>Technologies Used</h2>
 <ul>
@@ -32,7 +28,6 @@ i dont want to use each time origin because it is error prone , so how to do it 
 <h3>What is <code>HEAD</code> in Git?</h3>
 
 <p><code>HEAD</code> in Git is a <strong>pointer to your current commit</strong> – it shows what you're currently "looking at" or where new commits will be added.</p>
-
 
 <h3>What is Tracking?</h3>
 
@@ -68,8 +63,6 @@ i dont want to use each time origin because it is error prone , so how to do it 
 </ul>
 
 <p>In essence, tracking is about making your common Git operations (<code>pull</code>, <code>push</code>, <code>status</code>) more efficient and informative by pre-configuring the remote and remote branch your local branch is most closely associated with.</p>
-
-
 
 <h3>What is <code>origin</code>?</h3>
 <p><code>origin</code> is the default name Git gives to your remote repository (usually on GitHub). You can check it with:</p>
@@ -142,11 +135,9 @@ git branch -vv
       <li>When you `git push origin my-feature-branch`, you're taking your 'my-feature-branch' document from your desk and uploading it to the shared drive (<code>origin</code>) for everyone else to see.</li>
   </ul>
 
-
   <p>Without the shared drive (<code>origin</code>), you couldn't easily collaborate or back up your work.</p>
 
 <p>In essence, <code>origin</code> is the lifeline connecting your individual contributions to the collective project, enabling teamwork, ensuring data integrity, and simplifying your daily Git operations.</p>
-
 
 <h2>Design - Branching Strategy</h2>
 <p>
@@ -200,8 +191,6 @@ git merge preview       # Merge changes from the preview branch into main
 git push                # Push the updated main branch to origin/main
 </code></pre>
 
-
-
 <h2>Demo</h2>
 
 <h3>branch created<h3>
@@ -212,13 +201,12 @@ dev :
 preview :
 <img src='./figs/create-preview-branch.png'/>
 
-
 <h3>show upstream</h3>
 
 You can see here that only main branch has upstream which is origin/main
 <img src='./figs/show-branch-upstream.png'/>
 
-This means that on main you can do 
+This means that on main you can do
 
 ```bash
 git pull
@@ -226,7 +214,6 @@ git push
 ```
 
 and git will know where to look for the info i.e. origin/main
-
 
 <h3>create upstream</h3>
        
@@ -238,16 +225,15 @@ The following create upstream for preview
 
 <img src='./figs/set-preview-upstream-for-preview.png'/>
 
-now all branched has upstream 
+now all branched has upstream
 
 <img src='./figs/all-branch-has-upstream.png'/>
-
 
 <h3>github dashboard ahead \ behind</h3>
 
 <img src='./figs/dev-github-dashboard-ahead.png'/>
 
-click on it 
+click on it
 
 <img src='./figs/dev-ahead-click.png'/>
 
@@ -255,10 +241,9 @@ we can see that dev is a head of main
 
 <img src='./figs/dev-ahead-of-main.png'/>
 
-
 <h2>Points of Interest</h2>
 <ul>
-  <li>.......</li>
+<li>While <code>git branch -vv</code> shows a local branch's behind/ahead status relative to its configured upstream (e.g., <code>dev</code> compared to <code>origin/dev</code>), the GitHub dashboard's "Branches" tab displays the behind/ahead status of <strong>each remote branch (as it exists on GitHub)</strong> relative to the repository's <em>default branch</em> (typically <code>main</code> or <code>master</code>).</li>
 </ul>
 
 <h2>References</h2>
@@ -266,4 +251,3 @@ we can see that dev is a head of main
     <li>...</li>
    
 </ul>
-
