@@ -229,7 +229,7 @@ click on it
 
 <img src='./figs/dev-ahead-click.png' alt='GitHub dashboard screenshot after clicking the "ahead" indicator for the dev branch' />
 
-we can see that dev is a head of main
+we can see that dev is ahead of main
 
 <img src='./figs/dev-ahead-of-main.png' alt='GitHub dashboard screenshot detailing commits where dev is ahead of main' />
 
