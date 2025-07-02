@@ -30,40 +30,40 @@ what does origin means ?
 
 <h2>Git relevant basics</h2>
 
-  <h3>What is Tracking in Git?</h3>
+<h3>What is Tracking?</h3>
 
-  <p>In Git, <strong>tracking</strong> refers to the established relationship between a local branch in your repository and a specific branch in a remote repository.</p>
+<p>In Git, <strong>tracking</strong> refers to the established relationship between a local branch in your repository and a specific branch in a remote repository.</p>
 
-  <p>Think of it as setting up a <strong>default communication channel</strong> for a particular local branch. When a local branch "tracks" a remote branch (often called its "upstream branch"), Git gains several convenient automatic behaviors:</p>
+<p>Think of it as setting up a <strong>default communication channel</strong> for a particular local branch. When a local branch "tracks" a remote branch (often called its "upstream branch"), Git gains several convenient automatic behaviors:</p>
 
-  <h4>1. Simplified `git pull`</h4>
-  <p>When you're on a tracking branch and type just <code>git pull</code>, Git automatically knows which remote to fetch from and which remote branch to merge into your current local branch. You don't need to specify <code>git pull origin main</code> every time if your local <code>main</code> branch is tracking <code>origin/main</code>.</p>
+<h4>1. Simplified `git pull`</h4>
+<p>When you're on a tracking branch and type just <code>git pull</code>, Git automatically knows which remote to fetch from and which remote branch to merge into your current local branch. You don't need to specify <code>git pull origin main</code> every time if your local <code>main</code> branch is tracking <code>origin/main</code>.</p>
 
-  <h4>2. Simplified `git push`</h4>
-  <p>Similarly, if your local branch is tracking a remote branch, you can often just type <code>git push</code>, and Git will automatically push your commits to the corresponding remote branch.</p>
+<h4>2. Simplified `git push`</h4>
+<p>Similarly, if your local branch is tracking a remote branch, you can often just type <code>git push</code>, and Git will automatically push your commits to the corresponding remote branch.</p>
 
-  <h4>3. Status Information</h4>
-  <p><code>git status</code> provides helpful information about your local branch's relationship to its tracking branch. It will tell you if your local branch is:</p>
-  <ul>
-      <li><strong>"ahead"</strong> (you have commits not yet pushed to the remote).</li>
-      <li><strong>"behind"</strong> (the remote has commits you haven't pulled yet).</li>
-      <li><strong>"diverged"</strong> (both you and the remote have unique commits).</li>
-      <li><strong>"up to date."</strong></li>
-  </ul>
+<h4>3. Status Information</h4>
+<p><code>git status</code> provides helpful information about your local branch's relationship to its tracking branch. It will tell you if your local branch is:</p>
+<ul>
+    <li><strong>"ahead"</strong> (you have commits not yet pushed to the remote).</li>
+    <li><strong>"behind"</strong> (the remote has commits you haven't pulled yet).</li>
+    <li><strong>"diverged"</strong> (both you and the remote have unique commits).</li>
+    <li><strong>"up to date."</strong></li>
+</ul>
 
-  <h4>How is tracking established?</h4>
-  <ul>
-      <li><strong>Cloning a repository:</strong> When you <code>git clone</code> a repository, Git automatically sets up your local <code>main</code> (or <code>master</code>) branch to track <code>origin/main</code> (or <code>origin/master</code>).</li>
-      <li><strong>Creating a new local branch from a remote branch:</strong> If you do <code>git checkout -b new-feature origin/new-feature</code>, your new <code>new-feature</code> branch will automatically track <code>origin/new-feature</code>.</li>
-      <li><strong>Manually setting/changing upstream:</strong>
-          <ul>
-              <li>When pushing a new local branch for the first time: <code>git push -u origin my-new-branch</code> (<code>-u</code> is shorthand for <code>--set-upstream</code>).</li>
-              <li>For an existing local branch: <code>git branch --set-upstream-to=origin/another-branch my-local-branch</code>.</li>
-          </ul>
-      </li>
-  </ul>
+<h4>How is tracking established?</h4>
+<ul>
+    <li><strong>Cloning a repository:</strong> When you <code>git clone</code> a repository, Git automatically sets up your local <code>main</code> (or <code>master</code>) branch to track <code>origin/main</code> (or <code>origin/master</code>).</li>
+    <li><strong>Creating a new local branch from a remote branch:</strong> If you do <code>git checkout -b new-feature origin/new-feature</code>, your new <code>new-feature</code> branch will automatically track <code>origin/new-feature</code>.</li>
+    <li><strong>Manually setting/changing upstream:</strong>
+        <ul>
+            <li>When pushing a new local branch for the first time: <code>git push -u origin my-new-branch</code> (<code>-u</code> is shorthand for <code>--set-upstream</code>).</li>
+            <li>For an existing local branch: <code>git branch --set-upstream-to=origin/another-branch my-local-branch</code>.</li>
+        </ul>
+    </li>
+</ul>
 
-  <p>In essence, tracking is about making your common Git operations (<code>pull</code>, <code>push</code>, <code>status</code>) more efficient and informative by pre-configuring the remote and remote branch your local branch is most closely associated with.</p>
+<p>In essence, tracking is about making your common Git operations (<code>pull</code>, <code>push</code>, <code>status</code>) more efficient and informative by pre-configuring the remote and remote branch your local branch is most closely associated with.</p>
 
 
 
@@ -90,7 +90,7 @@ git remote show origin
 
 <h3>What is upstream?</h3>
 Upstream in Git is the primary remote repository or branch that your local repository pulls updates from and/or pushes your contributions towards. 
-Upstream is a property of a local branch
+<p>Upstream is a property of a local branch</p>
 
 <h4>How to check upstream</h4>
 
@@ -146,6 +146,8 @@ git branch -vv
 
 
 <h3>Push without origin</h3>
+Here you push to the remote repository, and within that remote repository, you push to a specific branch
+
 <h4>Goal</h4>
 <ul>
   <li>Push from <strong>dev</strong> → <strong>preview</strong></li>
@@ -157,14 +159,14 @@ git branch -vv
 
 <h5>1. Push <code>dev</code> to <code>preview</code> with tracking</h5>
 <pre><code>git checkout dev
-git push --set-upstream origin dev:preview
+git push --set-upstream origin preview
 </code></pre>
 <p>Now from <code>dev</code> branch, just run:</p>
 <pre><code>git push</code></pre>
 
 <h5>2. Push <code>preview</code> to <code>main</code> with tracking</h5>
 <pre><code>git checkout preview
-git push --set-upstream origin preview:main
+git push --set-upstream origin main
 </code></pre>
 <p>Now from <code>preview</code> branch, just run:</p>
 <pre><code>git push</code></pre>
@@ -184,13 +186,13 @@ git push --set-upstream origin preview:main
     <tr>
       <td><code>dev</code></td>
       <td><code>preview</code></td>
-      <td><code>git push --set-upstream origin dev:preview</code></td>
+      <td><code>git push --set-upstream origin preview</code></td>
       <td><code>git push</code></td>
     </tr>
     <tr>
       <td><code>preview</code></td>
       <td><code>main</code></td>
-      <td><code>git push --set-upstream origin preview:main</code></td>
+      <td><code>git push --set-upstream origin main</code></td>
       <td><code>git push</code></td>
     </tr>
   </tbody>
@@ -219,6 +221,9 @@ git push
 ```
 
 and git will know where to look for the info i.e. origin/main
+
+<h3>set upstream of preview for dev</h3>
+
 
 <h3>branch created<h3>
 
