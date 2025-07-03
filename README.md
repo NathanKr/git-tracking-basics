@@ -38,6 +38,25 @@ Git Tracking Basics for CI/CD Workflows
 
 <h2>Git tracking basics</h2>
 
+<h3>What is a Branch in Git?</h3>
+<p>A <strong>branch</strong> in Git is a lightweight, movable pointer to a commit. It serves as a <strong>separate track or timeline for changes</strong> within your repository. This allows you to work on new features, bug fixes, or prepare for different deployment stages (like <code>dev</code>, <code>preview</code>, or <code>main</code>) without interfering with the integrity of other branches.</p>
+
+
+<h3>Local vs. Remote Branches</h3>
+<p>When working with Git, it's essential to distinguish between branches that exist on your local machine and those that reside on a remote server (like GitHub).</p>
+
+<h4>Local Branch</h4>
+<p>A <strong>local branch</strong> is a branch that exists only in your local Git repository on your computer. You create, commit to, and manage these branches directly on your machine. Changes made on a local branch are not visible to others or on the remote repository until you explicitly "push" them.</p>
+
+<h4>Remote Branch</h4>
+<p>A <strong>remote branch</strong> (often referred to with a prefix like <code>origin/</code>, e.g., <code>origin/main</code> or <code>origin/dev</code>) represents the state of a branch on a remote Git repository. These branches are what other collaborators push their changes to and pull updates from. You cannot directly check out or commit to a "remote branch" in the same way you would a local one. Instead, your local repository maintains references to these remote branches, known as "remote-tracking branches."</p>
+
+<h4>Remote-Tracking Branch</h4>
+<p>A <strong>remote-tracking branch</strong> (e.g., <code>origin/main</code>) is a local reference that acts as a bookmark for the last known state of a remote branch. Git updates these references whenever you communicate with the remote (e.g., using <code>git fetch</code>, <code>git pull</code>, or <code>git push</code>). They show you where the remote branch was at your last synchronization point and are crucial for determining if your local branch is "ahead" or "behind" the remote.</p>
+
+<p>In essence, you work on your <strong>local branches</strong>, and then synchronize your changes with the <strong>remote branches</strong> (via their <strong>remote-tracking branch</strong> counterparts) on the shared server.</p>
+
+
 <h3>What is <code>HEAD</code> in Git?</h3>
 
 <p><code>HEAD</code> in Git is a <strong>pointer to your current commit</strong> – it shows what you're currently "looking at" or where new commits will be added.</p>
