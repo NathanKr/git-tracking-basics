@@ -137,7 +137,7 @@ Git Tracking Basics for CI/CD Workflows
 
 <p>In essence, <code>origin</code> is the lifeline connecting your individual contributions to the collective project, enabling teamwork, ensuring data integrity, and simplifying your daily Git operations.</p>
 
-<p>As discussed above, the **upstream** (or tracking) branch is the specific remote branch that your local branch is configured to pull updates from and push changes to by default. It defines the default remote target for commands like <code>git pull</code> and <code>git push</code> when executed without explicit remote or branch names. An upstream is a property of a <b>local branch</b>.</p>
+<p>As discussed above, the <stromg>upstream</strong> (or tracking) branch is the specific remote branch that your local branch is configured to pull updates from and push changes to by default. It defines the default remote target for commands like <code>git pull</code> and <code>git push</code> when executed without explicit remote or branch names. An upstream is a property of a <b>local branch</b>.</p>
 
 <h4>How to check <code>origin</code> and Upstream</h4>
 <p>To see your configured remotes (like <code>origin</code>):</p>
