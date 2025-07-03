@@ -37,6 +37,7 @@ Git Tracking Basics for CI/CD Workflows
 </ul>
 
 <h2>Git tracking basics</h2>
+<p>This section explains fundamental Git concepts that are essential for understanding branch tracking and remote interactions.</p>
 
 <h3>What is a Branch in Git?</h3>
 <p>A <strong>branch</strong> in Git is a lightweight, movable pointer to a commit. It serves as a <strong>separate track or timeline for changes</strong> within your repository. This allows you to work on new features, bug fixes, or prepare for different deployment stages (like <code>dev</code>, <code>preview</code>, or <code>main</code>) without interfering with the integrity of other branches.</p>
@@ -203,6 +204,8 @@ git push                # Push the updated main branch to origin/main
 </code></pre>
 
 <h2>Demo</h2>
+<p>This section provides hands-on demonstrations of the Git concepts and branching workflows discussed earlier. Follow along by executing the commands in your local clone of this repository.</p>
+
 
 <h3>Branch Creation</h3>
 
